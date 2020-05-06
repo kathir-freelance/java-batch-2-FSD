@@ -1,0 +1,63 @@
+package com.atos.day1_basics;
+
+public class TestInheritance {
+
+	public static void main(String[] args) {
+			
+		ScientificCalc ob=new ScientificCalc();
+		ob.sub();
+		ob.add();
+		ob.sin();
+		//ob.bin();//compilation err - as both are subclasses
+		ob.tan();
+	//	ob.goToNextLine();
+		ProgrammingCalc prog1=new ProgrammingCalc();
+		prog1.add();
+		prog1.sub();
+		prog1.bin();
+		
+		Calc c1=new Calc();
+		c1.add();
+		c1.sub();
+		//c1.goToNextLine();
+		//c1.tan();
+		//c1.bin();
+		
+	}
+
+}
+class Calc{
+
+	private void goToNextLine(){
+		System.out.println("\n");
+	}
+	
+	public void add(){
+	System.out.println("in add - calc class");
+	goToNextLine();
+	}
+	public void sub(){
+		System.out.println("in sub - calc class");
+		goToNextLine();
+	}
+	
+}
+
+class ScientificCalc extends Calc{
+	//ref of add(), sub() in calc (base)
+	public void tan(){
+		System.out.println("in tan - scientific calc class");
+	}
+	public void sin(){
+		System.out.println("in sin - scientific calc class");
+	}
+}
+class ProgrammingCalc extends Calc{
+
+	public void bin(){
+		System.out.println("in bin - ProgrammingCalc calc class");
+	}
+}
+
+
+
