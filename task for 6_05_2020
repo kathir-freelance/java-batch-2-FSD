@@ -1,0 +1,54 @@
+1. constructor invocation in inheritance hierarchy
+
+2. difference between no arg constructor and default constructor
+
+3. if my base class method is static 
+can i override that method in sub class
+
+4. emp , manager , admin
+emp is a base class
+manager and admin are sub classes
+
+when ever we create a object of emp or manager or admin or all together say 2 obj of each class
+
+finally only one output should be printed and the output should say
+
+o/p --> no of obj created is 6 or no of emp are 6
+
+Hint : it shud not print for every obj
+       it uses super()
+       prog of constructor invoc in inheritance
+
+
+class A {}, whats the base class for it?
+
+java.lang.Object
+
+String s="hello";
+
+sysout(s instanceof String);
+sysout(s instanceof Object);
+
+if it prints true the u check
+
+Object b=s; //possible and this is upcasting
+
+Integer i=90;
+
+sysout(i instanceof Integer);
+sysout(i instanceof Object);
+
+if it prints true the u check
+
+Object b=i; //possible and this is upcasting
+
+class  Empl - obj of Empl is emp
+
+class Admin extends Empl - obj of admin ad
+
+	sysout(ad instanceof Admin)
+	sysout(ad instanceof Empl)
+	sysout(ad instanceof Object)
+
+a. tv, Dvd, Laptop if these are subclasses what can be their logical correct base class name
+b. implement dyn poly for the same scenario
