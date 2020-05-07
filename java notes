@@ -1,0 +1,443 @@
+
+java 
+
+oops
+
+class , objects
+abstrction,encapsulation,polymorphism,inheritance
+
+class
+
+class is a blueprint
+
+collection of data members and member function
+
+collection of obj 
+
+objects are created from class
+
+obj
+instance of a class
+(example)
+
+Bird - dove, crow, pigeon.....
+
+3 - id, behaviour, state- attributes of obj
+
+
+book- pages,author name,publisher name, date....
+
+
+Player
+ hand- attr
+ play() - action / behaviour
+
+
+
+qty - 0
+avblStatus - not avbl
+purchase() - 
+
+c1,c2
+
+ abstraction - 
+ encapsulation - class or obj
+
+c++ / c with classes = partial obj 
+
+inheritance
+
+add()
+mul()
+div()
+sub()
+
+	is a ==== extends
+	
+	inheritance relationship
+
+	association - has a - using
+		aggregation - individually exist, 
+		composition - tightly dependant on each other - classes
+		
+		Heart and Human
+
+
+polymorphism- var, obj, meth,
+
+	static, dynamic
+
+	
+
+intro to java
+
+history -
+james gosling
+around 1990
+oak ---------------------------java(island)
+sun micro systems----- acq - oracle
+
+WORA - write once and run anywhere
+
+interactive tv - failure 
+
+
+www + netscape nav+ 
+
+applet
+
+java pure obj oriented ?
+
+reason : primitives
+
+
+type conversion 
+ 
+jre8
+
+jdk9 - dev
+jre9 - run
+	jvm ?
+
+relation between jvm and jre
+
+
+jre - specification
+jvm - impl
+
+jvm arch -
+G1F collector
+
+mk yong - set java env variable
+https://mkyong.com/java/how-to-set-java_home-on-windows-10/
+
+temp setting path :
+
+set path="c:progfiles/java/jdk/bin"; in cmd prompt
+
+on closing cmd prompt , reopenin it will not wrk
+
+
+whats the purpose of having 2 jre folders
+
+one inside java and other inside jdk folder
+
+how many diff ways we ccan write main method inside a java class
+
+generate a to z using for loop
+
+10 -15 lines
+
+what is varargs(java 1.5)
+
+
+portable
+platform independant - independant of os
+
+code .java----compile----bytecode(.class)----jvm 
+ 
+
+8 primitives - 
+
+integer types
+	byte -1
+	short  -2 
+	int -4
+	long  -8 -- 0L
+
+float point
+	float - 4  - 0.0f
+	double -8 - 0.0.d
+
+char - 2 by  - '\u0000'
+boolean -  1byte - false
+
+String - class 
+
+byte b=45; -128 to 127
+
+short s=b;
+
+float f=90;
+
+
+
+inheritance - reusability
+
+is a - 
+
+association - using
+
+has a -
+
+	aggregation 
+	composition
+
+class A{
+
+	B ob;
+}
+
+A ob1;
+ob1 contains obj of B
+
+Calc
+	add();
+	sub();
+
+
+Scientific
+
+	tan()
+	sin()
+programming
+
+	hex()
+	bin()
+
+
+ClassName objName=new ClassName();
+
+Scientific obj=new Scientific();
+obj.add();
+obj.sub();
+obj.sin();
+obj.tan();
+
+
+Calc c=new Calc();
+c.add();
+c.sub();
+c.tan();//comp error
+c.sin();//comp error
+
+
+Primate
+	jump(){ logic}
+	walk() { 2legs and 2 hands} // overridden meth
+
+
+Human extends Primate{
+	//ref for walk() which is in base
+
+//overriding meth - public , dont use static 
+	walk()//overriding or redefining the meth in sub class
+	{
+		super.walk();//super is a obj of base class
+		//this cannot be used inside a static method
+		//it can be placed anywhere in subclass methods
+		2 legs to walk
+	}
+}
+
+//super can be placed any whr in the method of sub class
+//only super() shud be kept in the first line of subclass constructor
+//super() is nothing but its a constructor call of base class
+//super(10) - invoke arg constructor if the base class
+
+Monkey extends primate{
+
+Ape extends primate{
+
+
+polymorphism ?
+
+	static poly - method existing in diff form
+
+	based on only args, return type can be anything ,access specifier can be anything
+		
+	1. no of args
+	2. datatype of arg
+	3. order of datetype
+
+	eg: println() or print()
+
+
+class Calc{
+
+	add(int a,int b)
+	add(int b,float c)
+	add(float w ,float c)
+	add(int ,double)
+	
+}
+	dyn poly : vmi or dyn meth dispacth or late binding
+
+	requires inheritance and overriding
+
+	* a method is binded to an obj at runtime
+
+	* obj exisiting in diff forms
+
+	* NOTE : A BASE CLASS OBJ OR REF cannot access unique method of sub class
+
+Human - talk()
+	Trainer  -talk()
+	Father - talk()
+	Friend - talk()
+	Son - talk()
+	
+
+Human h=null;		//polymorphic
+//Trainer t=new Trainer();
+//h=t;
+
+h=new Trainer();	//upward casting
+h.talk();
+
+//at same time
+
+h=new Father();
+h.talk();
+
+//at same time
+
+h=new Son();
+h.talk();
+
+
+
+		
+MovieUser 
+	login();
+
+PaidUser
+	login(){}
+	offlineDownload();
+	
+GuestUser	
+	login(){}
+	registerAsPaid()
+
+awt or swing in java -- UI
+
+2 radio buttons
+
+o Paid User 
+0 Guest
+
+User u=new GuestUser();
+u.login();
+
+at same time
+u choose paid user
+
+u=new PaidUser();
+u.login();
+
+
+
+
+
+if u need to access uhique method of sub clas then u have to downward cast
+
+User u=new GuestUser();
+u.login();
+//u.registerAsPaid();//comp err
+//soln is downward casting - explicit casting
+
+if(u instanceof GuestUser){
+GuestUser gu1=(GuestUser)u;//for me inside u contains  gu obj// for u it has paid user obj
+gu1.registerAsPaid();
+}
+else if(u instanceof PaidUser){
+GuestUser gu1=(PaidUser)u;
+gu1.offlineDownload();
+}
+
+class A {}, whats the base class for it?
+
+java.lang.Object
+
+String s="hello";
+
+sysout(s instanceof String);
+sysout(s instanceof Object);
+
+if it prints true the u check
+
+Object b=s; //possible and this is upcasting
+
+Integer i=90;
+
+sysout(i instanceof Integer);
+sysout(i instanceof Object);
+
+if it prints true the u check
+
+Object b=i; //possible and this is upcasting
+
+class  Empl - obj of Empl is emp
+
+class Admin extends Empl - obj of admin ad
+
+	sysout(ad instanceof Admin)
+	sysout(ad instanceof Empl)
+	sysout(ad instanceof Object)
+
+Abstraction
+
+	Abstract class - 50%
+
+	Interface - 100%
+	
+	in interface after j8 - default method and static methods which can have body 
+
+
+Interface
+
+	* all methods are by default abstract and public
+	* can create variables ,but all will become constants
+	* variables must be initialized with values
+	* will become public static and final
+	* we achieve multiple inheritance using this
+	* we cant create a obj of interface (no constructors available)
+	* a interface can extend multiple interfaces
+	* a class can implement multiple interfaces at same time
+	* when a class implements interface , the class acts as subtype of interface
+
+
+public static final int NO_OF_DAYS=31; //can be accessed by ob of subtype or class name of interface
+
+
+contract between the client and class implementing it
+
+atos 
+	15 ppl
+	are good in c & c++
+	proj includes embedded prog + web application
+	8hrs
+	no sat and sun
+	cant depend on self learning on them
+
+	31 days
+	java - 20 days
+	jsp and servlets - 10 days
+	1 day for assesment
+
+trainer allocated
+
+	jan 1st
+	jan 31st completed
+	
+feb 1st - proj starts
+
+day 1, 2,3
+4th,5th and 6th training s not happening
+
+pay back - 14 lakhs
+
+
+
+contract
+	trainingJava();
+	trainingAdvJava();
+	31
+
+IIHT implements Contract
+
+	 trainingJava(){}
+	trainingAdvJava(){}
+
+NIIT
+
