@@ -1,0 +1,20 @@
+
+1. notepad, os,users , implement interface concept
+
+2. can we override static method of a interface
+
+3. interface I
+	{
+
+	}
+	interface I2{}
+	class A{}
+
+	class B extends A implements I2
+
+
+B ob=new B();
+
+ sysout(ob instanceof B);
+ sysout(ob instanceof A);
+ 
