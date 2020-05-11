@@ -1,0 +1,23 @@
+1.comparator 
+
+2. 
+d.push("welcome");
+        d.push("hllo");
+        d.push("alpha");
+        System.out.println(d);
+        
+        System.out.println(d.pop());
+        System.out.println(d.pop());
+
+3.
+Iterate a map using map.entry
+
+for(Map.Entry o:m.entrySet()){
+		
+		System.out.println(o);
+	}
+
+4. can i add list into another list?
+5. can i add a list into set or map?
+
+
