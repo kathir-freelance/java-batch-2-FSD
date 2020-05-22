@@ -1,0 +1,108 @@
+
+container
+DI
+IOC
+
+Bean factory (I)
+	Resource(I) - core pkg-io pkg--
+
+		-classpathResource(C) - read any resource (file,img) which is in claspath(src)
+		- FileSystemResource(C) - read any resource (file,img) which is in file store(c drive,d drive)
+
+	lazy instantiation - obj will be created on demand
+				getBean("id")- 
+	config - metadata config- xml or annotation,java config
+		
+	xml - <beans> <bean id="k1" class="com.atos.Emp" scope="">
+			
+whatever obj is created by reading the config file will be place din spring pool with a unique identifier
+by default the scope will be singleton
+to chang the scope we use attribute -scope="prototype"
+so a new obj will be created
+
+Application ctx(I)
+
+	eager instantiation - obj are created whn xml is read by container
+	I18n
+	event 
+	read resources
+
+
+when scope of a bean in application ctx container is protottype then it goes fr lazy instantiation
+other are eager instantiation
+
+
+di in xml
+
+	ref --> reference of another bean's id
+
+
+
+spring mvc
+
+	small talk
+
+front controller pattern:
+
+	master controller
+
+		user defined controller
+
+DispathcerServlet - front controller
+
+	assign work to some component
+
+Handler mapping
+user defined controller
+view resolvers
+view
+
+DS---(log)-HM
+Hm scan code -  stores info abt all ctlr class and its method in registry
+@RequestMapping("log")
+	login()
+
+shared with DS-- will inform the home controller
+controller will execute method anf return - pagename
+
+DS--> name ---> view resolver
+
+vr --> prefix="/WEB-INF/view/" suffix=".jsp"
+
+vR--->attach prefix and suffix to the page name --->/WEB-INF/view/loginpage.jsp---DS
+
+DS---> /WEB-INF/view/loginpage.jsp ->view 
+
+will go execute the page -> html output to DS
+DS will put it on the browser
+
+@component - create obj
+
+	@controller - create obj + makes class as controller
+
+	@Service
+
+	@Repository
+
+
+
+
+
+class homecontroller
+
+	@RequestMapping("log")
+	login()
+{
+	return "loginpage";
+}
+	@RequestMapping("register")
+	register
+	
+class prodcontroller
+
+	@RequestMapping("add")
+	add
+	@RequestMapping("del")
+	del
+	@RequestMapping("update")
+	update
