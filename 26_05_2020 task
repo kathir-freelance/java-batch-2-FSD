@@ -1,0 +1,15 @@
+
+spring mvc arch
+
+index page---link with name clic
+
+on clicking the link ---- verify.jsp
+
+in verify.jsp
+text box - get numb---> process whther it is even otr odd
+
+if its even or odd take to result page anfd display even in green color and odd in red (div)
+
+ques 2:
+
+get all and get by id in spring mvc --using my project----name of project -- prodManagement
